@@ -1,0 +1,39 @@
+{
+    "name": "composants-natinf",
+    "version": "0.0.1",
+    "description": "Ensemble de composants VueJS sous Vuetify pour la gestion NATINF",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "vite build",
+        "build:demo": "vite build --config demo/vite.config.js",
+        "deploy:demo": "vite build --config demo/vite.config.js && gh-pages -d demo-dist",
+        "lint": "eslint . --ext .js,.vue"
+    },
+    "peerDependencies": {
+        "vue": "^3.5.13",
+        "vuetify": "^3.7.6"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.2.1",
+        "eslint": "^9.18.0",
+        "gh-pages": "^6.3.0",
+        "vite": "^6.0.7"
+    },
+    "keywords": [
+        "vue",
+        "vuetify",
+        "natinf",
+        "recherche"
+    ],
+    "author": "César Lizurey",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cesar-lizurey/vuetify-natinf"
+    },
+    "files": [
+        "dist"
+    ]
+}

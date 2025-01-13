@@ -1,0 +1,20 @@
+{
+    "name": "vuetify-natinf-demo",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "vue": "^3.5.13",
+        "vuetify": "^3.7.6",
+        "vuetify-natinf": "file:../"
+    },
+    "devDependencies": {
+        "@mdi/font": "^7.4.47",
+        "@vitejs/plugin-vue": "^4.0.0",
+        "vite": "^4.0.0"
+    }
+}
