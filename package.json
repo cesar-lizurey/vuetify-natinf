@@ -1,9 +1,15 @@
 {
-    "name": "composants-natinf",
-    "version": "0.0.1",
+    "name": "vuetify-natinf",
+    "version": "0.0.3",
     "description": "Ensemble de composants VueJS sous Vuetify pour la gestion NATINF",
     "main": "dist/index.js",
     "module": "dist/index.js",
+    "exports": {
+      ".": {
+        "import": "./dist/vuetify-natinf.es.js",
+        "require": "./dist/vuetify-natinf.umd.js"
+      }
+    },
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "vite build",
@@ -25,7 +31,9 @@
         "vue",
         "vuetify",
         "natinf",
-        "recherche"
+        "recherche",
+        "infraction",
+        "justice"
     ],
     "author": "César Lizurey",
     "license": "MIT",

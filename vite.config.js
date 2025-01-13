@@ -6,7 +6,8 @@ export default defineConfig({
     lib: {
       entry: 'src/index.js',
       name: 'VuetifyNATINF',
-      fileName: (format) => `vuetify-natinf.${format}.js`
+      fileName: (format) => `vuetify-natinf.${format}.js`,
+      formats: ['es', 'umd']
     },
     rollupOptions: {
       external: ['vue', 'vuetify'],
@@ -15,7 +16,8 @@ export default defineConfig({
           vue: 'Vue',
           vuetify: 'Vuetify'
         }
-      }
+      },
+      exports: 'named'
     }
   },
   plugins: [vue()]
