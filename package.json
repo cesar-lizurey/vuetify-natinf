@@ -8,7 +8,7 @@
     "scripts": {
         "build": "vite build",
         "build:demo": "vite build --config demo/vite.config.js",
-        "deploy:demo": "vite build --config demo/vite.config.js && gh-pages -d demo-dist",
+        "deploy:demo": "vite build --config demo/vite.config.js && gh-pages -d demo/dist",
         "lint": "eslint . --ext .js,.vue"
     },
     "peerDependencies": {

@@ -3,7 +3,11 @@ import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
   plugins: [vue()],
+  root: 'demo',
   build: {
-    outDir: 'demo-dist',
+    outDir: 'dist',
+  },
+  rollupOptions: {
+    input: 'demo/index.html',
   },
 });
