@@ -22,7 +22,7 @@
                     density="compact"
                     label="Affichage"
                     v-model="formatAffichage"
-                    :items="['carte', 'cartouche', 'bouton']"
+                    :items="['carte', 'cartouche']"
                     class="ml-2"
                   ></v-select>
                 </v-card-title>
