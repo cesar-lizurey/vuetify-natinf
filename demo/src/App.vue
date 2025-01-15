@@ -44,6 +44,32 @@
         </v-card-text>
       </v-card>
     </v-main>
+    <v-footer
+      class="bg-indigo-darken-4 text-center d-flex flex-column"
+    >
+      <div class="logosFooter">
+        <a href="https://www.npmjs.com/package/vuetify-natinf" target="_blank"><img src="https://raw.githubusercontent.com/npm/logos/cc343d8c50139f645d165aedfe4d375240599fd1/npm%20logo/classic/npm-2009.svg?raw=true" /></a>
+        <a href="https://github.com/cesar-lizurey/vuetify-natinf" target="_blank"><img src="/github-mark-white.svg" /></a>
+        <a href="https://www.data.gouv.fr/fr/reuses/vuetify-natinf/" target="_blank"><img src="/data.gouv.fr.png" /></a>
+      </div>
+
+      <div class="pt-0">
+        Composants de recherche de NATINF développé et partagé en source ouverte pour l'utilisation libre de chacun. Merci au Ministère de la Justice pour la mise à disposition des données.
+      </div>
+
+      <v-divider></v-divider>
+
+      <div class="logosFooter">
+        <a href="https://cesar.lizurey.fr" target="_blank">
+          <v-chip
+            class="ma-4"
+            color="white"
+            prepend-avatar="https://cesar.lizurey.fr/img/cesar.jpeg"
+            text="César LIZUREY"
+          ></v-chip>
+        </a> 
+      </div>
+    </v-footer>
   </v-app>
 </template>
 
@@ -74,5 +100,10 @@ export default defineComponent({
   width: 20vw;
   max-width: 200px;
   margin: min(5%, 20px);
+}
+
+.logosFooter img {
+  height: 30px;
+  margin: 5px 15px;
 }
 </style>
