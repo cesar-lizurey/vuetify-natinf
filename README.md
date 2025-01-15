@@ -1,5 +1,9 @@
 # Vuetify-NATINF
 
+<div align="center">
+  <img src="https://cesar-lizurey.github.io/vuetify-natinf/logo_recherche_natinf_transparent.png" alt="Logo" width="300px">
+</div>
+
 Ensemble de composants Vue pour gérer NATINF, embellis par Vuetify:
 
 * un composant de recherche, qui permet de chercher un NATINF par son code ou une liste de NATINF par du texte;
@@ -9,7 +13,9 @@ Ensemble de composants Vue pour gérer NATINF, embellis par Vuetify:
 
 [Voir la démo en ligne](https://cesar-lizurey.github.io/vuetify-natinf/)
 
-![Description de l'image](docs/apercu-vuetify-natinf.gif)
+![Vue en cartes](docs/apercu-vuetify-natinf-cartes.gif)
+
+![Vue en cartouches](docs/apercu-vuetify-natinf.gif)
 
 ## Origine
 
