@@ -1,6 +1,9 @@
 <template>
   <v-app>
     <v-main class="pa-6">
+      <div id="logo">
+        <img src="/logo_recherche_natinf_transparent.png" alt="Logo recherche NATINF">
+      </div>
       <v-card>
         <v-card-title>
           Recherche de NATINF
@@ -12,7 +15,7 @@
               <v-card v-if="infractions.length">
                 <v-card-title class="d-flex flex-column align-center">
                   <span>
-                  Liste des NATINF
+                    Liste des NATINF
                   </span>
                   <v-select
                   max-width="200"
@@ -59,3 +62,17 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+#logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#logo img {
+  width: 20vw;
+  max-width: 200px;
+  margin: min(5%, 20px);
+}
+</style>
