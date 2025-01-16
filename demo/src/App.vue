@@ -50,7 +50,7 @@
       <div class="logosFooter">
         <a href="https://www.npmjs.com/package/vuetify-natinf" target="_blank"><img src="https://raw.githubusercontent.com/npm/logos/cc343d8c50139f645d165aedfe4d375240599fd1/npm%20logo/classic/npm-2009.svg?raw=true" /></a>
         <a href="https://github.com/cesar-lizurey/vuetify-natinf" target="_blank"><img src="/github-mark-white.svg" /></a>
-        <a href="https://www.data.gouv.fr/fr/reuses/vuetify-natinf/" target="_blank"><img src="/data.gouv.fr.png" /></a>
+        <a href="https://www.data.gouv.fr/fr/reuses/vuetify-natinf/" target="_blank"><img src="/data.gouv.fr.svg" /></a>
       </div>
 
       <div class="pt-0">

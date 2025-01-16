@@ -8,7 +8,7 @@
  * @returns {Promise<Object|boolean>} Les données du NATINF sous forme d'objet ou `false` si introuvable.
  *
  * @example
- * const details = await fetchNATINF('12345');
+ * const details = await rechercheNATINF('12345');
  * if (details) {
  *   console.log('Détails du NATINF:', details);
  * } else {
