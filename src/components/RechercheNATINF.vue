@@ -93,6 +93,7 @@ watch(
     <template #chip="{ props: p, item }">
       <v-chip
         v-bind="p"
+        :color="(correspondancesNatures[item.raw['Unnamed: 1']] || {}).couleur || 'primary'"
         :text="`[${
           (correspondancesNatures[item.raw['Unnamed: 1']] || {}).abr || ''
         }] ${
@@ -105,9 +106,20 @@ watch(
     <template #item="{ props: p, item }">
       <v-list-item
         v-bind="p"
-        :title="`[${(correspondancesNatures[item.raw['Unnamed: 1']] || {}).abr || ''}] ${item.raw['Unnamed: 2']}`"
+        :title="item.raw['Unnamed: 2']"
         :subtitle="item.raw['Ministère de la Justice, Direction des affaires criminelles et']"
-      ></v-list-item>
+      >
+        <template #prepend>
+          <v-chip
+            size="x-small"
+            :color="(correspondancesNatures[item.raw['Unnamed: 1']] || {}).couleur || 'primary'"
+            class="mr-2"
+            label
+          >
+            {{ (correspondancesNatures[item.raw['Unnamed: 1']] || {}).abr || '' }}
+          </v-chip>
+        </template>
+      </v-list-item>
     </template>
   </v-autocomplete>
 </template>
