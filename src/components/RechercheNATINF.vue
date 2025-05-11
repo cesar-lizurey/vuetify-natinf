@@ -94,7 +94,13 @@ watch(
       <v-chip
         v-bind="p"
         :color="(correspondancesNatures[item.raw['Unnamed: 1']] || {}).couleur || 'primary'"
-        :text="`[${item.raw['Ministère de la Justice, Direction des affaires criminelles et']}] ${item.raw['Unnamed: 2']}`"
+        :text="`[${
+          (correspondancesNatures[item.raw['Unnamed: 1']] || {}).abr || ''
+        }] ${
+          item.raw[
+            'Ministère de la Justice, Direction des affaires criminelles et'
+          ]
+        } - ${item.raw['Unnamed: 2']}`"
       ></v-chip>
     </template>
     <template #item="{ props: p, item }">
