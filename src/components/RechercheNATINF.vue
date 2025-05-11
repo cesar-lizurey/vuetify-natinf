@@ -1,5 +1,6 @@
 <script setup>
 import { reactive, watch, defineProps, toRefs } from 'vue';
+import { correspondancesNatures } from './correspondancesNatures';
 
 const props = defineProps({
   multiple: {
@@ -92,15 +93,19 @@ watch(
     <template #chip="{ props: p, item }">
       <v-chip
         v-bind="p"
-        prepend-icon="mdi-scale-balance"
-        :text="`[${item.raw['Ministère de la Justice, Direction des affaires criminelles et']}] ${item.raw['Unnamed: 2']}`"
+        :text="`[${
+          (correspondancesNatures[item.raw['Unnamed: 1']] || {}).abr || ''
+        }] ${
+          item.raw[
+            'Ministère de la Justice, Direction des affaires criminelles et'
+          ]
+        } - ${item.raw['Unnamed: 2']}`"
       ></v-chip>
     </template>
     <template #item="{ props: p, item }">
       <v-list-item
         v-bind="p"
-        prepend-icon="mdi-scale-balance"
-        :title="item.raw['Unnamed: 2']"
+        :title="`[${(correspondancesNatures[item.raw['Unnamed: 1']] || {}).abr || ''}] ${item.raw['Unnamed: 2']}`"
         :subtitle="item.raw['Ministère de la Justice, Direction des affaires criminelles et']"
       ></v-list-item>
     </template>
