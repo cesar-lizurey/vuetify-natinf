@@ -33,6 +33,17 @@ watch(
     clearTimeout(recherche.recherche);
     recherche.recherche = setTimeout(async () => {
       recherche.enCours = true;
+      /*
+
+      exemple:
+      https://tabular-api.data.gouv.fr/api/resources/c6fb5b37-b3bc-4904-bd26-1b29ad7391df/data/?Unnamed:%202__contains=moyen*electronique
+
+      Selon que l'utilisateur entre du texte ou un nombre, on va rechercher l'ensemble des infractions qui contiennent le texte
+      ou l'infraction qui a exactement le code NATINF.
+
+      À ce jour la donnée qui figure sur le site data.gouv.fr est mal formatée, ce qui donne ce code difficilement compréhensible.
+
+      */
       let complementURL;
       const numericValue = parseFloat(val);
       if (!isNaN(numericValue) && isFinite(numericValue)) {
@@ -82,8 +93,13 @@ watch(
     <template #chip="{ props: p, item }">
       <v-chip
         v-bind="p"
-        prepend-icon="mdi-scale-balance"
-        :text="`[${item.raw['Ministère de la Justice, Direction des affaires criminelles et']}] ${item.raw['Unnamed: 2']}`"
+        :text="`[${
+          (correspondancesNatures[item.raw['Unnamed: 1']] || {}).abr || ''
+        }] ${
+          item.raw[
+            'Ministère de la Justice, Direction des affaires criminelles et'
+          ]
+        } - ${item.raw['Unnamed: 2']}`"
       ></v-chip>
     </template>
     <template #item="{ props: p, item }">
