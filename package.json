@@ -1,6 +1,6 @@
 {
   "name": "vuetify-natinf",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Ensemble de composants VueJS sous Vuetify pour la gestion NATINF",
   "main": "dist/index.js",
   "module": "dist/index.js",

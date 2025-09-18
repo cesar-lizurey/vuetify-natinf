@@ -27,10 +27,10 @@
                   ></v-select>
                 </v-card-title>
                 <v-card-text class="d-flex flex-wrap" v-if="formatAffichage === 'carte'">
-                  <carte-NATINF v-for="natinf in infractions.map((n) => n['Ministère de la Justice, Direction des affaires criminelles et'])" :key="`NATINF-${natinf}`" :natinf="+natinf" class="my-2" />
+                  <carte-NATINF v-for="natinf in infractions.map((n) => n['Numéro NATINF'])" :key="`NATINF-${natinf}`" :natinf="+natinf" class="my-2" />
                 </v-card-text>
                 <v-card-text class="d-flex flex-wrap" v-else-if="formatAffichage === 'cartouche'">
-                  <cartouche-NATINF v-for="natinf in infractions.map((n) => n['Ministère de la Justice, Direction des affaires criminelles et'])" :key="`NATINF-${natinf}`" :natinf="+natinf" class="my-2" />
+                  <cartouche-NATINF v-for="natinf in infractions.map((n) => n['Numéro NATINF'])" :key="`NATINF-${natinf}`" :natinf="+natinf" class="my-2" />
                 </v-card-text>
               </v-card>
               <v-alert v-else type="warning">

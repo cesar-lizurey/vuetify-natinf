@@ -20,11 +20,11 @@ export default defineComponent({
     const NATINFAffiche = computed(() => {
       if (!detailsNATINF) return;
       return {
-        couleur: correspondancesNatures[detailsNATINF['Unnamed: 1']].couleur || 'primary',
-        abr: `[${correspondancesNatures[detailsNATINF['Unnamed: 1']].abr}]` || '',
-        texte: `${natinf.value} ${detailsNATINF['Unnamed: 2']}` || 'INTROUVABLE',
-        prevuPar: detailsNATINF['Unnamed: 3'],
-        reprimePar: detailsNATINF['Unnamed: 4'],
+        couleur: correspondancesNatures[detailsNATINF['Nature de l\'infraction']]?.couleur || 'primary',
+        abr: correspondancesNatures[detailsNATINF['Nature de l\'infraction']]?.abr ? `[${correspondancesNatures[detailsNATINF['Nature de l\'infraction']].abr}]` : '',
+        texte: `${natinf.value} ${detailsNATINF['Qualification de l\'infraction']}` || 'INTROUVABLE',
+        prevuPar: detailsNATINF['Définie par'],
+        reprimePar: detailsNATINF['Réprimée par'],
       };
     });
 
