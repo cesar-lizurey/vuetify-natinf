@@ -17,7 +17,7 @@
 */
 export async function rechercheNATINF(natinf) {
   try {
-    const apiUrl = 'https://tabular-api.data.gouv.fr/api/resources/c6fb5b37-b3bc-4904-bd26-1b29ad7391df/data/?Ministère de la Justice, Direction des affaires criminelles et__exact=';
+    const apiUrl = 'https://tabular-api.data.gouv.fr/api/resources/3899108b-262c-46d4-8283-1c70f1cf4326/data/?Numéro NATINF__exact=';
     const response = await fetch(`${apiUrl}${natinf}`, {
       method: 'GET',
       credentials: 'include',

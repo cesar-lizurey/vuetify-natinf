@@ -1,14 +1,14 @@
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
-  base: '/vuetify-natinf/',
+  base: "/vuetify-natinf/",
   plugins: [vue()],
-  root: 'demo',
+  root: "demo",
   build: {
-    outDir: 'dist',
+    outDir: "dist",
   },
   rollupOptions: {
-    input: 'demo/index.html',
+    input: "demo/index.html",
   },
 });

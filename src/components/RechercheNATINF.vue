@@ -11,7 +11,7 @@ const props = defineProps({
 
 const { multiple } = toRefs(props);
 
-const apiUrl = 'https://tabular-api.data.gouv.fr/api/resources/c6fb5b37-b3bc-4904-bd26-1b29ad7391df/data/?';
+const apiUrl = 'https://tabular-api.data.gouv.fr/api/resources/3899108b-262c-46d4-8283-1c70f1cf4326/data/?';
 const selection = defineModel({ type: Object });
 
 const recherche = reactive({
@@ -47,11 +47,11 @@ watch(
       let complementURL;
       const numericValue = parseFloat(val);
       if (!isNaN(numericValue) && isFinite(numericValue)) {
-        // si c'est un nombre: Ministère de la Justice, Direction des affaires criminelles et__exact
-        complementURL = 'Ministère de la Justice, Direction des affaires criminelles et__exact'; // C'est un nombre
+        // si c'est un nombre: Numéro NATINF__exact
+        complementURL = 'Numéro NATINF__exact'; // C'est un nombre
       } else {
-        // si c'est un texte: Unnamed: 2__contains=moyen*electronique
-        complementURL = 'Unnamed: 2__contains';
+        // si c'est un texte: Qualification de l'infraction__contains
+        complementURL = 'Qualification de l\'infraction__contains';
       }
 
       fetch(`${apiUrl}${complementURL}=${val}`, {
@@ -81,7 +81,7 @@ watch(
     return-object
     :items="recherche.resultats"
     :loading="recherche.enCours"
-    item-title="nom"
+    item-title="Qualification de l'infraction"
     label="Code NATINF ou texte"
     placeholder="Commencez à écrire..."
     prepend-icon="mdi-scale-balance"
@@ -93,30 +93,28 @@ watch(
     <template #chip="{ props: p, item }">
       <v-chip
         v-bind="p"
-        :color="(correspondancesNatures[item.raw['Unnamed: 1']] || {}).couleur || 'primary'"
+        :color="(correspondancesNatures[item.raw['Nature de l\'infraction']] || {}).couleur || 'primary'"
         :text="`[${
-          (correspondancesNatures[item.raw['Unnamed: 1']] || {}).abr || ''
+          (correspondancesNatures[item.raw['Nature de l\'infraction']] || {}).abr || ''
         }] ${
-          item.raw[
-            'Ministère de la Justice, Direction des affaires criminelles et'
-          ]
-        } - ${item.raw['Unnamed: 2']}`"
+          item.raw['Numéro NATINF']
+        } - ${item.raw['Qualification de l\'infraction']}`"
       ></v-chip>
     </template>
     <template #item="{ props: p, item }">
       <v-list-item
         v-bind="p"
-        :title="item.raw['Unnamed: 2']"
-        :subtitle="item.raw['Ministère de la Justice, Direction des affaires criminelles et']"
+        :title="item.raw['Qualification de l\'infraction']"
+        :subtitle="item.raw['Numéro NATINF']"
       >
         <template #prepend>
           <v-chip
             size="x-small"
-            :color="(correspondancesNatures[item.raw['Unnamed: 1']] || {}).couleur || 'primary'"
+            :color="(correspondancesNatures[item.raw['Nature de l\'infraction']] || {}).couleur || 'primary'"
             class="mr-2"
             label
           >
-            {{ (correspondancesNatures[item.raw['Unnamed: 1']] || {}).abr || '' }}
+            {{ (correspondancesNatures[item.raw['Nature de l\'infraction']] || {}).abr || '' }}
           </v-chip>
         </template>
       </v-list-item>
